@@ -63,7 +63,7 @@ const searchIndex = (txt) => {
   }
   return i;
 }
-const createMessage = (txt, name) => {
+const createMessage = (txt, name,guild) => {
   const now = moment.tz("Asia/Tokyo").format();
   const currentDate = dateFormat(now, 'date');
   const strCorrDate = currentDate[0]+'年'+currentDate[1]+'月'+currentDate[2]+'日';
@@ -81,6 +81,7 @@ const createMessage = (txt, name) => {
   
   return msg;
 }
+
 const decodestr=decodeURI('%E3%81%9B%E3%81%86%E3%81%A1%E3%82%83%E3%82%93%E3%81%AF%E3%83%BC%EF%BC%9F');
 const decodestr2=unescape('%u5C11%u3057%u6B62%u307E%u3063%u3066%u5C11%u3057%u307E%u305F%u6B69%u3044%u3066');
 
@@ -126,7 +127,8 @@ client.on('message', message =>
       let i = 0;
       
       if(message.content.match(/test/)){
-        message.channel.send( `${message.author}さん、私は元気です。`);
+        message.channel.send( `${message.author}さん、私は元気です${getGuildEmoji('hart_white',message.guild)}`);
+        
       }else if(message.content.match(/せうちゃまだいすきあいしてる/)){
         message.channel.send( `${getGuildEmoji('wing_left',message.guild)} ฅ^ ${getGuildEmoji('hart_yellow',message.guild)} ω ${getGuildEmoji('hart_pink',message.guild)} ^ฅ ${getGuildEmoji('wing_right',message.guild)}`);
       }else if(message.content.match(decodestr)){
@@ -135,7 +137,8 @@ client.on('message', message =>
         message.channel.send( `${unescape('%u305D%u308C%u3067%u3082%u9032%u3080%u304B%u3089%u611B%u3057%u3066%u306D')} ${getGuildEmoji('hart_cyan',message.guild)}`);
       }else{
       　//const requestCh = message.guild.channels.cache.find(ch => ch.name === process.env.REQUEST_CH_NAME);
-        message.channel.send( `${message.author}さん、${createMessage(message.content,message.author.username)}`);
+        message.channel.send( `${message.author}さん、${createMessage(message.content,message.author.username,message.guild)}`);
+        
     　}
   　}
   }catch(e){
