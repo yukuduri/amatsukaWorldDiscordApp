@@ -128,7 +128,6 @@ client.on('message', message =>
       
       if(message.content.match(/test/)){
         message.channel.send( `${message.author}さん、私は元気です${getGuildEmoji('hart_white',message.guild)}`);
-        
       }else if(message.content.match(/せうちゃまだいすきあいしてる/)){
         message.channel.send( `${getGuildEmoji('wing_left',message.guild)} ฅ^ ${getGuildEmoji('hart_yellow',message.guild)} ω ${getGuildEmoji('hart_pink',message.guild)} ^ฅ ${getGuildEmoji('wing_right',message.guild)}`);
       }else if(message.content.match(decodestr)){
@@ -138,7 +137,6 @@ client.on('message', message =>
       }else{
       　//const requestCh = message.guild.channels.cache.find(ch => ch.name === process.env.REQUEST_CH_NAME);
         message.channel.send( `${message.author}さん、${createMessage(message.content,message.author.username,message.guild)}`);
-        
     　}
   　}
   }catch(e){
