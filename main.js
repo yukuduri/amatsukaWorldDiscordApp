@@ -133,7 +133,7 @@ client.on('message', message =>
       }else if(message.content.match(decodestr)){
         message.channel.send( `${decodeURI('%E3%81%8D%E3%82%87%E3%81%86%E3%82%82%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84%EF%BC%81')} ${getGuildEmoji('favicon',message.guild)}`);
       }else if(message.content.match(decodestr2)){
-        message.channel.send( `${unescape('%u305D%u308C%u3067%u3082%u9032%u3080%u304B%u3089%u611B%u3057%u3066%u306D')} ${getGuildEmoji('hart_cyan',message.guild)}`);
+        message.channel.send( `${unescape('%u305D%u308C%u3067%u3082%u9032%u3080%u304B%u3089%u611B%u3057%u3066%u306D')} ${getGuildEmoji('hart_seu',message.guild)}`);
       }else{
       　//const requestCh = message.guild.channels.cache.find(ch => ch.name === process.env.REQUEST_CH_NAME);
         message.channel.send( `${message.author}さん、${createMessage(message.content,message.author.username,message.guild)}`);
